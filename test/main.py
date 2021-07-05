@@ -46,7 +46,7 @@ class Test_cli(unittest.TestCase):
 
         ret = run("lndoctor --colors none {0:s}".format(os.path.join(dirname, "mylink2")))
         ret = list(filter(None, ret.split("\n")))
-        ret = [i[:-1] if i[-1] == "/" else i for i in ret]
+        ret = [i[:-1] if i[-1] == os.sep else i for i in ret]
 
         self.assertTrue(len(ret) == 2)
         self.assertEqual(ret[1], a)
