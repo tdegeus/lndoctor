@@ -46,7 +46,7 @@ class Test_cli(unittest.TestCase):
 
         ret = run("lndoctor --colors none {0:s}".format(os.path.join(dirname, "mylink2")))
         print('ret = ', ret)
-        ret = list(filter(None, ret.split("\n")))
+        ret = list(filter(None, ret.splitlines()))
         ret = [i[:-1] if i[-1] == os.sep else i for i in ret]
         print('ret = ', ret)
 
